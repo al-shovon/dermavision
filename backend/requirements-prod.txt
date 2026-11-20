@@ -1,0 +1,7 @@
+# Production image: no PyTorch, no timm. The model runs on ONNX Runtime.
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+pillow
+numpy
+onnxruntime

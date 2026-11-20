@@ -1,0 +1,12 @@
+# Render blueprint for the API (free plan). The Dockerfile sets MODEL_FORMAT and MODEL_PATH.
+services:
+  - type: web
+    name: dermavision-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /health
+    envVars:
+      - key: ALLOWED_ORIGINS   # the address of your Vercel site; Render asks for it when you create the service
+        sync: false
